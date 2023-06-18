@@ -1,0 +1,41 @@
+/*Type selectors*/
+body{
+    margin:0px;
+    font-family:arial, sans-serif;
+    font-size:20px;
+    letter-spacing:1px;
+    /*
+        sans-serif is a type of font 
+        means that the word has no hook or other decorated line
+    */
+}
+header{
+    background-color:#223344;
+    color:#ffffff;
+    text-align:center;
+    font-size:2em;
+    padding:30px 0px;
+}
+main{
+    padding:30px 0px;
+    line-height:1.5em;
+}
+main>section{
+    display:flex;
+    justify-content:center;
+}
+
+/*Class selecters*/
+main>section>.col1{
+    width:90%;max-width:1200px;
+}
+main>section.headline{
+    font-size:1.5em;margin:30px 0px;
+}
+/* main>section.examples  */
+main>section.examples .example{
+    margin-bottom:15px;
+}
+main>section.examples .example>.description{
+    color:#888888;
+}
