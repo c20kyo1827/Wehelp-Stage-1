@@ -1,4 +1,8 @@
-/*Type selectors*/
+/*
+===============
+Type selectors
+===============
+*/
 body{
     margin:0px;
     font-family:arial, sans-serif;
@@ -23,19 +27,59 @@ main{
 main>section{
     display:flex;
     justify-content:center;
+    align-items:center
 }
 
-/*Class selecters*/
-main>section>.col1{
-    width:90%;max-width:1200px;
-}
+/*
+===============
+Class selecters
+===============
+*/
+/*
+    > : hierarchical
+    .a.b => class="a b"
+    .a .b =>
+        class="a"
+            class="b"
+*/
 main>section.headline{
-    font-size:1.5em;margin:30px 0px;
+    font-size:1.5em;
+    margin:30px 0px;
 }
-/* main>section.examples  */
-main>section.examples .example{
+main>section>.colTitle{
+    width:90%;
+    max-width:1200px;
+    color: #000000;
+}
+
+/* main>section.content  */
+main>section.content .colContent1{
+    padding: 0;
+    border: none;
+    border-top: medium double #8888;
+    width:90%;
+    max-width:1200px;
     margin-bottom:15px;
 }
-main>section.examples .example>.description{
-    color:#888888;
+
+/* Gallery */
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 660px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }
