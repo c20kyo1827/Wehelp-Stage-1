@@ -30,6 +30,28 @@ main>section{
     align-items:center
 }
 
+/* Gallery */
+main>section>div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 660px;
+}
+
+main>section>div.gallery:hover {
+    border: 1px solid #777;
+}
+
+main>section>div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+main>section>div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
 /*
 ===============
 Class selecters
@@ -60,26 +82,4 @@ main>section.content .colContent1{
     width:90%;
     max-width:1200px;
     margin-bottom:15px;
-}
-
-/* Gallery */
-div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 660px;
-}
-
-div.gallery:hover {
-    border: 1px solid #777;
-}
-
-div.gallery img {
-    width: 100%;
-    height: auto;
-}
-
-div.desc {
-    padding: 15px;
-    text-align: center;
 }
