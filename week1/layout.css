@@ -1,0 +1,85 @@
+/*
+===============
+Type selectors
+===============
+*/
+body{
+    margin:0px;
+    font-family:arial, sans-serif;
+    font-size:20px;
+    letter-spacing:1px;
+    /*
+        sans-serif is a type of font 
+        means that the word has no hook or other decorated line
+    */
+}
+header{
+    background-color:#223344;
+    color:#ffffff;
+    text-align:center;
+    font-size:2em;
+    padding:30px 0px;
+}
+main{
+    padding:30px 0px;
+    line-height:1.5em;
+}
+main>section{
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+
+/* Gallery */
+main>section>div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 660px;
+}
+
+main>section>div.gallery:hover {
+    border: 1px solid #777;
+}
+
+main>section>div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+main>section>div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/*
+===============
+Class selecters
+===============
+*/
+/*
+    > : hierarchical
+    .a.b => class="a b"
+    .a .b =>
+        class="a"
+            class="b"
+*/
+main>section.headline{
+    font-size:1.5em;
+    margin:30px 0px;
+}
+main>section>.colTitle{
+    width:90%;
+    max-width:1200px;
+    color: #000000;
+}
+
+/* main>section.content  */
+main>section.content .colContent1{
+    padding: 0;
+    border: none;
+    border-top: medium double #8888;
+    width:90%;
+    max-width:1200px;
+    margin-bottom:15px;
+}
