@@ -3,53 +3,8 @@
 Type selectors
 ===============
 */
-body{
-    margin:0px;
-    font-family:arial, sans-serif;
-    font-size:20px;
-    letter-spacing:1px;
-    /*
-        sans-serif is a type of font 
-        means that the word has no hook or other decorated line
-    */
-}
 header{
-    background-color:#223344;
-    color:#ffffff;
-    text-align:center;
-    font-size:2em;
-    padding:30px 0px;
-}
-main{
-    padding:30px 0px;
-    line-height:1.5em;
-}
-main>section{
-    display:flex;
-    justify-content:center;
-    align-items:center
-}
-
-/* Gallery */
-main>section>div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 660px;
-}
-
-main>section>div.gallery:hover {
-    border: 1px solid #777;
-}
-
-main>section>div.gallery img {
-    width: 100%;
-    height: auto;
-}
-
-main>section>div.desc {
-    padding: 15px;
-    text-align: center;
+    font-size:20px;
 }
 
 /*
@@ -57,29 +12,110 @@ main>section>div.desc {
 Class selecters
 ===============
 */
-/*
-    > : hierarchical
-    .a.b => class="a b"
-    .a .b =>
-        class="a"
-            class="b"
-*/
-main>section.headline{
-    font-size:1.5em;
-    margin:30px 0px;
-}
-main>section>.colTitle{
-    width:90%;
-    max-width:1200px;
-    color: #000000;
+
+/* Header part */
+header .display_flex{
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
-/* main>section.content  */
-main>section.content .colContent1{
-    padding: 0;
-    border: none;
-    border-top: medium double #8888;
-    width:90%;
-    max-width:1200px;
-    margin-bottom:15px;
+header .left_web_name{
+    flex: none;
+}
+
+header .right_menu_top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: auto;
+}
+
+header .right_menu_top>.menu_figure{
+    display: none;
+    height: 20px;
+    width: 20px;
+/*    position: relative;*/
+}
+
+header .right_menu_top>.menu_figure>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*
+    @TODO
+    @Reference : Wehelp website
+    @Description :
+        07/04
+        It draws three lines representing the hambrgur figure.
+        It has the animation of the drop down menu.
+        Please read it and finish this function
+
+header .right_menu_top>.menu_figure>.menu_lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1px;
+    background-color: var(--text-color);
+    transform: translate(-50%,-50%);
+}
+
+header .right>.menu-trigger>.lines::before,
+header .right>.menu-trigger>.lines::after{
+  position:absolute;content:'';
+  width:20px;height:1px;
+  background-color:var(--text-color);
+}
+*/
+
+header .right_menu_top>.menu_text{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 20px;
+}
+
+header .right_menu_top>.menu_text>.menu_text_item{
+/*    padding: 20px;*/
+    flex: none;
+}
+
+/* Main part */
+
+main .weclome{
+    display: flex;
+    height: 250px;
+    background-color: #E0FFFF;
+    justify-content: center;
+    align-items: center;
+}
+
+main .weclome>.weclome_text{
+    font-size:40px;
+}
+
+/*
+===============
+Media Query
+===============
+*/
+@media (min-width: 1200px) and (max-width: 1920px){
+    
+}
+
+@media (min-width: 600px) and (max-width: 1200px){
+    
+}
+
+@media (max-width: 600px){
+    header .right_menu_top>.menu_figure{
+        display: block;
+    }
+
+    header .right_menu_top>.menu_text{
+        display: none;
+    }
 }
