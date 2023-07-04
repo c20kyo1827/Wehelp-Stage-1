@@ -27,7 +27,6 @@ header .left_web_name{
 header .right_menu_top{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     flex: auto;
 }
 
@@ -45,13 +44,13 @@ header .right_menu_top>.menu_figure>img{
 }
 
 /*
-    @TODO
-    @Reference : Wehelp website
-    @Description :
-        07/04
-        It draws three lines representing the hambrgur figure.
-        It has the animation of the drop down menu.
-        Please read it and finish this function
+@TODO
+@Reference : Wehelp website
+@Description :
+    07/04
+    It draws three lines representing the hambrgur figure.
+    It has the animation of the drop down menu.
+    Please read it and finish this function
 
 header .right_menu_top>.menu_figure>.menu_lines {
     position: absolute;
@@ -74,6 +73,7 @@ header .right>.menu-trigger>.lines::after{
 header .right_menu_top>.menu_text{
     display: flex;
     justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     column-gap: 20px;
 }
@@ -91,10 +91,69 @@ main .weclome{
     background-color: #E0FFFF;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 main .weclome>.weclome_text{
-    font-size:40px;
+    font-size: 40px;
+}
+
+main .main_figure_top{
+    margin: auto;
+    width: 1200px;
+    gap: 20px;
+}
+
+
+main .main_figure_top>.figure_row1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main .main_figure_top>.figure_row1>.figure_row1_prmt{
+    background-color: #E0FFFF;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+main .main_figure_top>.figure_row1>.figure_row1_prmt>.figure_row1_img_setting{
+    /* TODO */
+    width: 80px;
+    height: 50px;
+}
+
+main .main_figure_top>.figure_row2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title{
+    background-color: #E0FFFF;
+    flex-grow: 1;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting{
+    /* TODO */
+    width: 100%;
+    flex-grow: 1;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting>.figure_row2_img_setting_2{
+    /* TODO */
+    aspect-ratio: auto 1 / 1;
+}
+
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt{
+    margin: auto;
+    flex-grow: 1;
+    text-align: center;
 }
 
 /*
@@ -103,11 +162,23 @@ Media Query
 ===============
 */
 @media (min-width: 1200px) and (max-width: 1920px){
-    
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 15%;
+    }
 }
 
 @media (min-width: 600px) and (max-width: 1200px){
-    
+    main .main_figure_top{
+        width: 90%;
+    }
+
+    main .main_figure_top>.figure_row1>.figure_row1_prmt{
+        width: 40%;
+    }
+
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 20%;
+    }
 }
 
 @media (max-width: 600px){
@@ -117,5 +188,18 @@ Media Query
 
     header .right_menu_top>.menu_text{
         display: none;
+    }
+
+    main .main_figure_top{
+        width: 90%;
+    }
+
+    main .main_figure_top>.figure_row1>.figure_row1_prmt{
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 100%;
     }
 }
