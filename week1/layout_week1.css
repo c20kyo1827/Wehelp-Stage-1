@@ -117,6 +117,7 @@ main .main_figure_top>.figure_row1>.figure_row1_prmt{
     flex-grow: 1;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 main .main_figure_top>.figure_row1>.figure_row1_prmt>.figure_row1_img_setting{
@@ -139,16 +140,9 @@ main .main_figure_top>.figure_row2>.figure_row2_title{
 }
 
 main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting{
-    /* TODO */
     width: 100%;
     flex-grow: 1;
 }
-
-main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting>.figure_row2_img_setting_2{
-    /* TODO */
-    aspect-ratio: auto 1 / 1;
-}
-
 
 main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt{
     margin: auto;
