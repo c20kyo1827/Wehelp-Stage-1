@@ -8,6 +8,7 @@ header{
 }
 
 body{
+    font-size:20px;
     margin: 0px;
 }
 
@@ -68,9 +69,9 @@ header .right_menu_top>.menu_figure>.menu_lines {
 
 header .right>.menu-trigger>.lines::before,
 header .right>.menu-trigger>.lines::after{
-  position:absolute;content:'';
-  width:20px;height:1px;
-  background-color:var(--text-color);
+    position:absolute;content:'';
+    width:20px;height:1px;
+    background-color:var(--text-color);
 }
 */
 
@@ -125,7 +126,6 @@ main .main_figure_top>.figure_row1>.figure_row1_prmt{
 }
 
 main .main_figure_top>.figure_row1>.figure_row1_prmt>.figure_row1_img_setting{
-    /* TODO */
     width: 80px;
     height: 50px;
 }
@@ -139,20 +139,43 @@ main .main_figure_top>.figure_row2{
 }
 
 main .main_figure_top>.figure_row2>.figure_row2_title{
+    position: relative;
     background-color: #E0FFFF;
     flex-grow: 1;
 }
 
 main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting{
     width: 100%;
-    flex-grow: 1;
+/*    flex-grow: 1;*/
 }
 
 main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt{
     margin: auto;
-    flex-grow: 1;
+/*    flex-grow: 1;*/
     text-align: center;
 }
+
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_star{
+    position: absolute;
+    color: yellow;
+    top: 2%;
+    right: 2%;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt_v2{
+    background-color: #E0FFFF;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    opacity: 0.7;
+    text-align: center;
+}
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
 
 /*
 ===============
