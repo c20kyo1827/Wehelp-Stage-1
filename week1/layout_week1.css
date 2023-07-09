@@ -36,10 +36,10 @@ header .right_menu_top{
 }
 
 header .right_menu_top>.menu_figure{
+    position: relative;
     display: none;
     height: 20px;
     width: 20px;
-/*    position: relative;*/
 }
 
 header .right_menu_top>.menu_figure>img{
@@ -47,6 +47,21 @@ header .right_menu_top>.menu_figure>img{
     width: 100%;
     object-fit: contain;
 }
+
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+header .right_menu_top>.menu_figure>.drop_down{
+    position:absolute;
+    top:50%;
+    left:50%;
+}
+header .right_menu_top>.menu_figure>.show{
+    
+}
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
 
 /*
 @TODO
@@ -210,6 +225,31 @@ Media Query
     header .right_menu_top>.menu_text{
         display: none;
     }
+
+    /* Drop down*/
+    header .right_menu_top>.show+.menu_text{
+        display:block;
+        width:50%;
+        height: 100%;
+        padding:10px 0px;
+        background-color:white;
+        position:fixed;
+        top:0px;
+        right:0px;
+        border-left: solid;
+        border-left-width: thin;
+        border-left-color: black;
+        z-index:101;
+        /* box-shadow:0px 0px 3px var(--normal-gray); */
+    }
+
+    header .right_menu_top>.show+.menu_text>.menu_text_item{
+        display:block;
+        width:100px;
+        margin:0px auto;
+        text-align:center;
+    }
+    /* Drop down*/
 
     main .main_figure_top{
         width: 90%;

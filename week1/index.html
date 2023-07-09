@@ -12,8 +12,9 @@
             <div class="left_web_name">My Website</div>
             <div class="right_menu_top">
                 <div class="menu_figure">
-                    <img src="134216_menu_lines_hamburger_icon.png" class="size_figure">
+                    <img src="134216_menu_lines_hamburger_icon.png" class="size_figure" onclick="test()">
                 </div>
+                <div class="drop_down"></div>
                 <div class="menu_text">
                     <div class="menu_text_item">Item 1</div>
                     <div class="menu_text_item">Item 2</div>
@@ -113,5 +114,35 @@
             </div>
         </div>
     </main>
+    <script>
+        console.log("1");
+        
+        function test(){
+            const e = document.getElementsByClassName("drop_down");
+            for (let i = 0; i < e.length; i++) {
+                console.log("add");
+                e.item(i).classList.add("show");
+            }
+        }
+
+        window.onclick = function(event) {
+            console.log(event.target);
+            if (!event.target.matches('.menu_text') && 
+                !event.target.matches('.menu_text_item') &&
+                !event.target.matches('.size_figure') && 
+                !event.target.matches('.menu_figure')
+            )
+            {
+                console.log("Not");
+                const e = document.getElementsByClassName("drop_down");
+                for (let i = 0; i < e.length; i++) {
+                    if (e.item(i).classList.contains('show')) {
+                        console.log("remove");
+                        e.item(i).classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
