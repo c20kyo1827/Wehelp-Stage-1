@@ -57,7 +57,7 @@ header .right_menu_top>.menu_figure>.drop_down{
     left:50%;
 }
 header .right_menu_top>.menu_figure>.show{
-    
+    flex: none;
 }
 /*---------------------*/
 /* Advanced assignment */
