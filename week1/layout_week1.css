@@ -231,7 +231,7 @@ Media Query
         display:block;
         width:50%;
         height: 100%;
-        padding:10px 0px;
+        padding: 10px;
         background-color:white;
         position:fixed;
         top:0px;
@@ -246,7 +246,7 @@ Media Query
     header .right_menu_top>.show+.menu_text>.menu_text_item{
         display:block;
         width:100px;
-        margin:0px auto;
+        margin:10px auto;
         text-align:center;
     }
     /* Drop down*/
