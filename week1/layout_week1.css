@@ -246,7 +246,7 @@ Media Query
     header .right_menu_top>.show+.menu_text>.menu_text_item{
         display:block;
         width:100px;
-        margin:10px auto;
+        margin:10px;
         text-align:center;
     }
     /* Drop down*/
