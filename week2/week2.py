@@ -1,7 +1,3 @@
-# Unit test
-# Logging interface
-# HW
-
 def task1():
     def find_and_print(messages):
         over_17_name = []
@@ -14,6 +10,7 @@ def task1():
                 for token in tokens:
                     if token.isdigit() and int(token) > 17:
                         over_17_name.append(name)
+                        break
             # Check the role
             elif sentence.find("college student")!=-1 or sentence.find("university student")!=-1:
                 over_17_name.append(name)
@@ -50,7 +47,7 @@ def task2():
                 salary_gain = 0.01*(float(salary_str) if str(salary_str).find("USD")==-1 else float(salary_str.split("USD")[0])*30) \
                             /max_bonus
                 # Parse performance
-                performance_gain = 0.4 # Default is 20%
+                performance_gain = 0.4 # Default is 40%
                 if employee["performance"].find("above"):
                     performance_gain = 0.7
                 elif employee["performance"].find("below"):
@@ -58,8 +55,6 @@ def task2():
                 # Add name and bonus
                 final_gain = 1.0 if (performance_gain + salary_gain)>1.0 else (performance_gain + salary_gain)
                 name2bonus[employee["name"]] = max_bonus * final_gain
-                # Sanity check
-                assert(name2bonus[employee["name"]] <= max_bonus)
         # Print
         for name,bonus in name2bonus.items():
             print("[{step}] - name : {name}, bonus : {bonus}".format(step="task2", name=name, bonus=bonus))
