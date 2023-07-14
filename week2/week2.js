@@ -9,7 +9,6 @@ function task1(){
                 tokens = sentence.split(' ')
                 for(token of tokens){
                     let number = parseInt(token);
-                    // console.log(number);
                     if(number > 17){
                         over_17_name.push(name);
                         break;
@@ -49,7 +48,7 @@ function task2(){
             for(employee of employees_info){
                 // Bonus :
                 //   max_bonus * (performance_gain + salary_gain)
-                //   salary_gain : salary/max_bonus
+                //   salary_gain : 0.01*salary/max_bonus
                 //   performance_gain : based on different performance
                 // Parse salary
                 let salary_str = (String(employee["salary"]).split(",")).join('');
@@ -137,6 +136,7 @@ function task4(){
 
 function task5(){
     function findIndexOfCar(seats, status, number){
+        // Construct a list with available seat => (index, value)
         idx_with_seats = {};
         for(let i=0 ; i<status.length ; i++){
             if(status[i] == 1){
@@ -145,6 +145,9 @@ function task5(){
         }
         difference = 2**64-1;
         most_fit_train_index = -1;
+        // Check 
+        //   1. the available seats is larger than the required number
+        //   2. the difference is the smallest(most fitted)
         for(const [index,seats_num] of Object.entries(idx_with_seats)){
             if((seats_num - number) >= 0 &&  (seats_num - number) < difference){
                 difference = (seats_num - number);

@@ -55,7 +55,6 @@ def task2():
                 # Add name and bonus
                 final_gain = 1.0 if (performance_gain + salary_gain)>1.0 else (performance_gain + salary_gain)
                 name2bonus[employee["name"]] = max_bonus * final_gain
-        # Print
         for name,bonus in name2bonus.items():
             print("[{step}] - name : {name}, bonus : {bonus}".format(step="task2", name=name, bonus=bonus))
 
@@ -120,7 +119,7 @@ def task5():
         # Construct a list with available seat => (index, value)
         idx_with_seats = [(index, seats[index]) for index, value in enumerate(status) if value==1]
         # Check 
-        #   1. the available seats is larger thant the required number
+        #   1. the available seats is larger than the required number
         #   2. the difference is the smallest(most fitted)
         difference = 2**64-1
         most_fit_train_index = -1
