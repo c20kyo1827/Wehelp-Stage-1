@@ -1,13 +1,13 @@
 function task1(){
     function findAndPrint(messages){
-        over_17_name = []
+        let over_17_name = []
         for(const [name,sentence] of Object.entries(messages)){
             // Skip the negative sentences because it is hard to judge
             if(sentence.search("not")!=-1 && sentence.search("n't")!=-1) continue;
             // Check the ages
             if(sentence.search("years old")!=-1){
-                tokens = sentence.split(' ')
-                for(token of tokens){
+                let tokens = sentence.split(' ')
+                for(const token of tokens){
                     let number = parseInt(token);
                     if(number > 17){
                         over_17_name.push(name);
@@ -42,10 +42,10 @@ function task1(){
 
 function task2(){
     function calculateSumOfBonus(data){
-        name2bonus = {};
-        max_bonus = 10000;
-        for(employees_info of Object.values(data)){
-            for(employee of employees_info){
+        let name2bonus = {};
+        let max_bonus = 10000;
+        for(const employees_info of Object.values(data)){
+            for(const employee of employees_info){
                 // Bonus :
                 //   max_bonus * (performance_gain + salary_gain)
                 //   salary_gain : 0.01*salary/max_bonus
@@ -96,8 +96,8 @@ function task2(){
 
 function task3(){
     function func(...data){
-        middle_name_list = []
-        middle_name_cnt = {}
+        let middle_name_list = []
+        let middle_name_cnt = {}
         for(const name of data)
             middle_name_list.push(name[1]);
         // Construct the dictionary based on the key : middle name, value : count of middle name
@@ -107,7 +107,7 @@ function task3(){
             else
                 middle_name_cnt[middle_name] = 1;
         }
-        ans_name = "沒有"
+        let ans_name = "沒有"
         // Iterate the name list to get the corresponding full name (There is only one full name corresponding to unique middle name)
         for(const[middle_name,value] of Object.entries(middle_name_cnt)){
             if(value==1){
@@ -137,14 +137,14 @@ function task4(){
 function task5(){
     function findIndexOfCar(seats, status, number){
         // Construct a list with available seat => (index, value)
-        idx_with_seats = {};
+        let idx_with_seats = {};
         for(let i=0 ; i<status.length ; i++){
             if(status[i] == 1){
                 idx_with_seats[i] = seats[i];
             }
         }
-        difference = 2**64-1;
-        most_fit_train_index = -1;
+        let difference = 2**64-1;
+        let most_fit_train_index = -1;
         // Check 
         //   1. the available seats is larger than the required number
         //   2. the difference is the smallest(most fitted)
