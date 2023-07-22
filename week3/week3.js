@@ -13,18 +13,15 @@ function clickToAddShow(){
 // When click on the region outside the drop down list => remove the show class from icon"s class list
 function clickToRemoveShow(){
     window.onclick = function(event) {
-        // console.log(event.target);
         if (!event.target.matches(".menu_text") && 
             !event.target.matches(".menu_text_item") &&
             !event.target.matches(".size_figure") && 
             !event.target.matches(".menu_figure")
         )
         {
-            // console.log("Not");
             const eDropDown = document.getElementsByClassName("drop_down");
             for (let i = 0; i < eDropDown.length; i++) {
                 if (eDropDown.item(i).classList.contains("show")) {
-                    // console.log("remove");
                     eDropDown.item(i).classList.remove("show");
                 }
             }
@@ -50,15 +47,12 @@ function preFetchAndAppendImages(){
     // Use response to get json format dataJSON
     // Process
     
-    console.log("Initial");
     fetch(url)
         .then((response) => {
-            console.log("Response");
             return response.json()
         })
         .then(
             (dataJSON) => {
-                console.log("Parse json");
                 let attractions = dataJSON["result"]["results"];
                 for(const val of attractions){
                     let title = val["stitle"];
@@ -105,10 +99,6 @@ function preFetchAndAppendImages(){
                 }
             }
         )
-    console.log("End");
-    for(let i=0 ; i<titleList.length ; i++){
-        console.log(titleList[i]);
-    }
 }
 
 async function loadMoreImg(){
@@ -140,7 +130,6 @@ async function loadMoreImg(){
         eRow2.item(0).appendChild(divRow2Title);
     }
     globalIter += eachRowTitle;
-    console.log(globalIter);
 }
 
 clickToRemoveShow();
