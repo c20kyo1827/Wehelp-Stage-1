@@ -1,0 +1,281 @@
+/*
+===============
+Type selectors
+===============
+*/
+header{
+    font-size:20px;
+}
+
+body{
+    font-size:20px;
+    margin: 0px;
+}
+
+/*
+===============
+Class selecters
+===============
+*/
+
+/* Header part */
+header .display_flex{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+header .left_web_name{
+    flex: none;
+}
+
+header .right_menu_top{
+    display: flex;
+    justify-content: flex-end;
+    flex: auto;
+}
+
+header .right_menu_top>.menu_figure{
+    position: relative;
+    display: none;
+    height: 20px;
+    width: 20px;
+}
+
+header .right_menu_top>.menu_figure>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+header .right_menu_top>.menu_figure>.drop_down{
+    position:absolute;
+    top:50%;
+    left:50%;
+}
+header .right_menu_top>.menu_figure>.show{
+    flex: none;
+}
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+
+/*
+@TODO
+@Reference : Wehelp website
+@Description :
+    07/04
+    It draws three lines representing the hambrgur figure.
+    It has the animation of the drop down menu.
+    Please read it and finish this function
+
+header .right_menu_top>.menu_figure>.menu_lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1px;
+    background-color: var(--text-color);
+    transform: translate(-50%,-50%);
+}
+
+header .right>.menu-trigger>.lines::before,
+header .right>.menu-trigger>.lines::after{
+    position:absolute;content:'';
+    width:20px;height:1px;
+    background-color:var(--text-color);
+}
+*/
+
+header .right_menu_top>.menu_text{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 20px;
+}
+
+header .right_menu_top>.menu_text>.menu_text_item{
+/*    padding: 20px;*/
+    flex: none;
+}
+
+/* Main part */
+
+main .weclome{
+    display: flex;
+    height: 250px;
+    background-color: #E0FFFF;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+main .weclome>.weclome_text{
+    font-size: 40px;
+}
+
+main .main_figure_top{
+    margin: auto;
+    width: 1200px;
+    gap: 20px;
+}
+
+
+main .main_figure_top>.figure_row1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main .main_figure_top>.figure_row1>.figure_row1_prmt{
+    background-color: #E0FFFF;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .main_figure_top>.figure_row1>.figure_row1_prmt>.figure_row1_img_setting{
+    width: 80px;
+    height: 50px;
+}
+
+main .main_figure_top>.figure_row2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title{
+    display: block;
+    position: relative;
+    background-color: #E0FFFF;
+    flex-grow: 1;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting{
+    margin: 0 auto;
+    width: 100%;
+    height: 60%;
+/*    flex-grow: 1;*/
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt{
+    /* flex-grow: 1; */
+    display: inline-block;
+    display: flex;
+    height: 40%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+main .main_figure_top>.figure_row3{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_star{
+    position: absolute;
+    color: yellow;
+    top: 2%;
+    right: 2%;
+}
+
+main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt_v2{
+    background-color: #E0FFFF;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    opacity: 0.7;
+    text-align: center;
+}
+/*---------------------*/
+/* Advanced assignment */
+/*---------------------*/
+
+/*
+===============
+Media Query
+===============
+*/
+@media (min-width: 1200px) and (max-width: 1920px){
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 15%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px){
+    main .main_figure_top{
+        width: 90%;
+    }
+
+    main .main_figure_top>.figure_row1>.figure_row1_prmt{
+        width: 40%;
+    }
+
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 20%;
+    }
+}
+
+@media (max-width: 600px){
+    header .right_menu_top>.menu_figure{
+        display: block;
+    }
+
+    header .right_menu_top>.menu_text{
+        display: none;
+    }
+
+    /* Drop down*/
+    header .right_menu_top>.show+.menu_text{
+        display:block;
+        width:50%;
+        height: 100%;
+        padding: 10px;
+        background-color:white;
+        position:fixed;
+        top:0px;
+        right:0px;
+        border-left: solid;
+        border-left-width: thin;
+        border-left-color: black;
+        z-index:101;
+        /* box-shadow:0px 0px 3px var(--normal-gray); */
+    }
+
+    header .right_menu_top>.show+.menu_text>.menu_text_item{
+        display:block;
+        width:100px;
+        margin:10px auto;
+        text-align:center;
+    }
+    /* Drop down*/
+
+    main .main_figure_top{
+        width: 90%;
+    }
+
+    main .main_figure_top>.figure_row1>.figure_row1_prmt{
+        flex-grow: 0;
+        width: 100%;
+    }
+
+    main .main_figure_top>.figure_row2>.figure_row2_title{
+        width: 100%;
+    }
+}
