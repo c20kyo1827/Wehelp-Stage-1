@@ -3,13 +3,13 @@ import json
 import csv
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import sys
 
 def task1():
     """
         Use the specific url to convert the .json format to the .csv format
         Don't use any third party tools
     """
+    print("Running task1...")
     url = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json"
     data_json = json.loads(urlopen(url).read())
     # ====================================
@@ -74,6 +74,7 @@ def task2():
         => 3 pages
         title, # of tweets, release time
     """
+    print("Running task2...")
     url_prefix = "https://www.ptt.cc"
     url = "https://www.ptt.cc/bbs/movie/index.html"
     num_pages_catched = 3
@@ -108,5 +109,5 @@ def task2():
 
 
 if __name__=="__main__":
-    # task1()
+    task1()
     task2()
