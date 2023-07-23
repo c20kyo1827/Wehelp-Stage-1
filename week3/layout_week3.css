@@ -169,7 +169,7 @@ main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_img_setting{
 
 main .main_figure_top>.figure_row2>.figure_row2_title>.figure_row2_txt{
     /* flex-grow: 1; */
-    display: inline-block;
+    /* display: inline-block; */
     display: flex;
     height: 40%;
     text-align: center;
