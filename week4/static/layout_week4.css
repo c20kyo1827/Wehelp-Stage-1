@@ -1,0 +1,61 @@
+/*
+===============
+Type selectors
+===============
+*/
+body{
+    margin: 0px;
+}
+
+header{
+    height: 100px;
+    font-size:25px;
+    font-weight:bold;
+    color: white;
+    background-color: MediumBlue;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+===============
+Class selecters
+===============
+*/
+
+main .login_title{
+    height: 20px;
+    font-size: 20px;
+    font-weight:bold;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+    margin-top: 20px;
+}
+
+main .login_form{
+    font-size: 20px;
+    font-weight: lighter;
+
+    text-align: center;
+}
+
+main .login_form .login_form_item{
+
+    margin: 10px;
+}
+
+/*
+    Checkerbox
+*/
+main .login_form .checkbox{
+    display: inline-block;
+    text-align: right;
+}

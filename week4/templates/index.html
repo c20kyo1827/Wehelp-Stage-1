@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8" />
+    <title>Week 4</title>
+    <link rel="stylesheet" type="text/css" href="../static/layout_week4.css">
+</head>
+<body>
+    <header>
+        Welcome, Please enter the account and the password
+    </header>
+    <main>
+        <div class="login_title">
+            Login System
+        </div>
+        <div class="login_form">
+            <form method="post" action="">
+                <div class="login_form_item">
+                    <label for="account">Account&nbsp;&nbsp;</label>
+                    <input type="text" id="account" name="account">
+                </div>
+                <div class="login_form_item">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password">
+                </div>
+                Agree for the terms<input type="checkbox" id="checkbox" name="checkbox">
+                <div class="login_form_item">
+                    <input type="submit" name="login" value="Login" onclick="isChecked()">
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../static/week4.js"></script>
+</body>
+</html>
