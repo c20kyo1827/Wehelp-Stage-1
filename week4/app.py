@@ -12,10 +12,8 @@ app.config["SECRET_KEY"] = b"_5#y2LF4Q8z\n\xec]/"
 @app.route("/", endpoint="index", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        return redirect(url_for("signin"), code=307)
-        # elif request.form["calculate"] == "calculate":
-        #     if request.form["integer"].isdecimal() == True and int(request.form["integer"]) > 0:
-        #         return redirect(url_for("squareNum", number=request.form["integer"]))
+        if request.form["login"] == "Login":
+            return redirect(url_for("signin"), code=307)
     return render_template("index.html")
 
 @app.route("/square/<int:number>", endpoint="squareNum")
