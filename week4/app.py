@@ -12,35 +12,26 @@ app.config["SECRET_KEY"] = b"_5#y2LF4Q8z\n\xec]/"
 @app.route("/", endpoint="index", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        if request.form.get("checkbox") == "on" and request.form["calculate"] == "login":
-            session["account"] = request.form["account"]
-            session["password"] = request.form["password"]
-            return redirect(url_for("signin"), code=307)
-        elif request.form["calculate"] == "calculate":
-            if request.form["integer"].isdecimal() == True and int(request.form["integer"]) > 0:
-                return redirect(url_for("sqaureNum", number=request.form["integer"]))
+        return redirect(url_for("signin"), code=307)
+        # elif request.form["calculate"] == "calculate":
+        #     if request.form["integer"].isdecimal() == True and int(request.form["integer"]) > 0:
+        #         return redirect(url_for("squareNum", number=request.form["integer"]))
     return render_template("index.html")
 
-@app.route("/sqaure/<int:number>", endpoint="sqaureNum")
-def sqaureNum(number):
-    sqaureResult = number**2
-    return render_template("number.html", sqaureResult=sqaureResult)
+@app.route("/square/<int:number>", endpoint="squareNum")
+def squareNum(number):
+    squareResult = int(number)**2
+    return render_template("number.html", squareResult=squareResult)
 
 # Sigin endpoint
 @app.route("/signin", endpoint="signin", methods=["POST"])
 def signin():
-    print("Signin")
-    print(session["account"])
-    print(type(session["account"]))
-    print(session["password"])
-    print(type(session["password"]))
-
     # Success
-    if session["account"] == "test" and session["password"] == "test":
+    if request.form["account"] == "test" and request.form["password"] == "test":
         session["state"] = True
         return redirect(url_for("successLogin"))
     # Empty account or password
-    elif session["account"] == "" or session["password"] == "":
+    elif request.form["account"] == "" or request.form["password"] == "":
         return redirect(url_for("errorLogin", message="Please enter username and password"))
     # Error account or password
     else:
