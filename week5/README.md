@@ -53,6 +53,7 @@ SELECT AVG(follower_count) FROM member;
 
 ## Task5
 ![image](https://github.com/c20kyo1827/c20kyo1827.github.io/blob/main/week5/cmd%20image/task5_1.jpg)
+![image](https://github.com/c20kyo1827/c20kyo1827.github.io/blob/main/week5/cmd%20image/task5_1_1.jpg)
 
 ~~~~sql
 SELECT message.content, member.username FROM member INNER JOIN message ON message.member_id=member.id;
