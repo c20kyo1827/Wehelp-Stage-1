@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8" />
+    <title>Week 6</title>
+    <link rel="stylesheet" type="text/css" href="../static/layout_week6.css">
+</head>
+<body>
+    <header>
+        Welcome, This is member page
+    </header>
+    <main>
+        <div class="form">
+            <div class="title">
+                Hello {{name}}, welcome to the login system
+            </div>
+            <div class="title">
+                <a href="{{url_for('signout', method='GET')}}">
+                    Logout system
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="form">
+            <form name="messageForm" method="post" onsubmit="return checkContentEmpty()">
+                <div class="title">
+                    Please leave message
+                </div>
+                <div class="form_item">
+                    <label for="content">Content</label>
+                    <input type="text" id="content" name="content">
+                </div>
+                <div class="form_item">
+                    <input type="submit" name="send" value="Send">
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="form">
+            {% for message in message_board %}
+                <div class="msg_item">
+                    <b>{{message.1}}</b> &nbsp; : {{message.2}} &nbsp;
+                    {% if message.2==username%}
+                        <form action="" method="post">
+                            <input type="hidden" name="messageId" value={{message.0}}>
+                            <input type="submit" name="deleteMessage" value="X" onclick="return checkConfirmDelet()">
+                        </form>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="../static/week6.js"></script>
+</body>
+</html>

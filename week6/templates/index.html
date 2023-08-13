@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8" />
+    <title>Week 6</title>
+    <link rel="stylesheet" type="text/css" href="../static/layout_week6.css">
+</head>
+<body>
+    <header>
+        Welcome, Please register or login
+    </header>
+    <main>
+        <div class="title">
+            Register System
+        </div>
+        <div class="form">
+            <form name="registerForm" method="post" onsubmit="return checkRegEmpty()">
+                <div class="form_item">
+                    <label for="name">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form_item">
+                    <label for="account">Account&nbsp;&nbsp;</label>
+                    <input type="text" id="account" name="account">
+                </div>
+                <div class="form_item">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password">
+                </div>
+                <div class="form_item">
+                    <input type="submit" name="register" value="Register">
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="title">
+            Login System
+        </div>
+        <div class="form">
+            <form name="loginForm" method="post" onsubmit="return checkLogEmpty()">
+                <div class="form_item">
+                    <label for="account">Account&nbsp;&nbsp;</label>
+                    <input type="text" id="account" name="account">
+                </div>
+                <div class="form_item">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password">
+                </div>
+                <div class="form_item">
+                    <input type="submit" name="login" value="Login">
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../static/week6.js"></script>
+</body>
+</html>
