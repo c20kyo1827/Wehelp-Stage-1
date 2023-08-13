@@ -17,7 +17,7 @@ class mysql_flow:
         mycursor.execute("USE website")
 
     def connect(self):
-        root_file_path = os.path.join("D:\\", "Temp", "Wehelp", "c20kyo1827.github.io", "week6", "mysqlLogin", "root.json")
+        root_file_path = os.path.join(os.path.dirname(__file__), "root.json")
         with open(root_file_path, "r") as f:
             root_info = json.load(f)
             self._mydb= mysql.connector.connect(
