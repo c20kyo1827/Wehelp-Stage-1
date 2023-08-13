@@ -1,5 +1,4 @@
 import mysql.connector
-import argparse
 import json
 import os
 
@@ -99,7 +98,8 @@ class mysql_flow:
 
     def add_message(self, member_id, content, like_count=0):
         mycursor = self._mydb.cursor()
-        sql = "INSERT INTO message (member_id, content, like_count) SELECT id, %s, %s FROM member WHERE id=%s LIMIT 1"
+        # sql = "INSERT INTO message (member_id, content, like_count) SELECT id, %s, %s FROM member WHERE id=%s LIMIT 1"
+        sql = "INSERT INTO message (member_id, content, like_count)"
         val = (content, like_count, member_id)
         mycursor.execute(sql, val)
         self._mydb.commit()
