@@ -77,11 +77,15 @@ def error():
 # Message
 @app.route("/createMessage", endpoint="createMessage", methods=["POST"])
 def createMessage():
+    if session["state"] == False:
+        return redirect(url_for("index"))
     flow.add_message(session["id"], request.form["content"])
     return redirect(url_for("member"))
 
 @app.route("/deleteMessage", endpoint="deleteMessage", methods=["POST"])
 def deleteMessage():
+    if session["state"] == False:
+        return redirect(url_for("index"))
     flow.delete_message(request.form["messageId"])
     return redirect(url_for("member"))
 
