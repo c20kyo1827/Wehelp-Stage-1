@@ -12,14 +12,9 @@ app.config["SECRET_KEY"] = b"_5#y2LF4Q8z\n\xec]/"
 # Main page
 @app.route("/", endpoint="index", methods=["GET", "POST"])
 def index():
-    if request.method == "POST":
-        register_request = request.form.get("register")
-        login_request = request.form.get("login")
-        if register_request == "Register":
-            return redirect(url_for("signup"), code=307)
-        if login_request == "Login":
-            return redirect(url_for("signin"), code=307)
-
+    # Check sign-in state
+    if session["state"] == True:
+        return redirect(url_for("member"))
     return render_template("index.html")
 
 # Sigup endpoint

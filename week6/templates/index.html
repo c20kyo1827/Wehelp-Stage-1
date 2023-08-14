@@ -15,7 +15,7 @@
             Register System
         </div>
         <div class="form">
-            <form name="registerForm" method="post" onsubmit="return checkRegEmpty()">
+            <form name="registerForm" method="post" action="{{url_for('signup')}}">
                 <div class="form_item">
                     <label for="name">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     <input type="text" id="name" name="name">
@@ -29,7 +29,7 @@
                     <input type="text" id="password" name="password">
                 </div>
                 <div class="form_item">
-                    <input type="submit" name="register" value="Register">
+                    <input type="submit" name="register" value="Register"  onclick="return checkRegEmpty()">
                 </div>
             </form>
         </div>
@@ -38,7 +38,7 @@
             Login System
         </div>
         <div class="form">
-            <form name="loginForm" method="post" onsubmit="return checkLogEmpty()">
+            <form name="loginForm" method="post" action="{{url_for('signin')}}">
                 <div class="form_item">
                     <label for="account">Account&nbsp;&nbsp;</label>
                     <input type="text" id="account" name="account">
@@ -48,7 +48,7 @@
                     <input type="text" id="password" name="password">
                 </div>
                 <div class="form_item">
-                    <input type="submit" name="login" value="Login">
+                    <input type="submit" name="login" value="Login" onclick="return checkLogEmpty()">
                 </div>
             </form>
         </div>
