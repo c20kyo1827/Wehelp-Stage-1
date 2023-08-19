@@ -1,0 +1,58 @@
+/*
+===============
+Type selectors
+===============
+*/
+body{
+    margin: 0px;
+}
+
+header{
+    height: 100px;
+    font-size:25px;
+    font-weight:bold;
+    color: white;
+    background-color: MediumBlue;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+===============
+Class selecters
+===============
+*/
+
+main .title{
+    height: 20px;
+    font-size: 20px;
+    font-weight:bold;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+    margin-top: 20px;
+}
+
+main .form{
+    font-size: 20px;
+    font-weight: lighter;
+
+    text-align: center;
+}
+
+main .form .form_item{
+    margin: 10px;
+}
+
+main .form .msg_item{
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+}

@@ -1,13 +1,14 @@
-from flask import Flask, request, redirect, url_for, render_template, session, make_response
+from flask import Flask, request, redirect, url_for, render_template, session, jsonify
+from flask_restful import Resource, Api
 import mysqlLogin.mysql_flow
 
 app = Flask(__name__)
+api = Api(app)
 flow = mysqlLogin.mysql_flow.mysql_flow()
 
 # Flask configur setting
 app.config["SECRET_KEY"] = b"_5#y2LF4Q8z\n\xec]/"
 # app.config["PERMANENT_SESSION_LIFETIME"] = False
-
 
 # Main page
 @app.route("/", endpoint="index", methods=["GET", "POST"])
@@ -17,7 +18,6 @@ def index():
         return redirect(url_for("member"))
     return render_template("index.html")
 
-# Sigup endpoint
 @app.route("/signup", endpoint="signup", methods=["POST"])
 def signup():
     member_info = flow.get_member(request.form["account"])
@@ -28,7 +28,6 @@ def signup():
     # Duplicated account
     return redirect(url_for("error", message="Account has been registered"))
 
-# Sigin endpoint
 @app.route("/signin", endpoint="signin", methods=["POST"])
 def signin():
     member_info = flow.get_member(request.form["account"], request.form["password"])
@@ -51,9 +50,8 @@ def signout():
     session["name"] = None
     return redirect(url_for("index"))
 
-# Login Page
-# Succcuss
-@app.route("/api/member", endpoint="member", methods=["GET", "POST"])
+# Login member page
+@app.route("/member", endpoint="member", methods=["GET", "POST"])
 def member():
     # Check sign-in state
     if session["state"] == False:
@@ -68,13 +66,59 @@ def member():
 
     all_message = flow.get_message()
     return render_template("member.html", name=session["name"], username=session["account"], message_board=all_message)
-# Fail
+
 @app.route("/error", endpoint="error")
 def error():
     msg_content = request.args.get("message", "Login failed...")
     return render_template("error.html", message=msg_content)
 
-# Message
+# Search/Update user name
+# @app.route("/api/member", endpoint="api/member", methods=["GET", "PATCH"])
+# def apiMember():
+#     if session["state"] == False:
+#         return redirect(url_for("index"))
+#     if request.method == "GET":
+#         member_info = flow.get_member(request.args.get("username"))
+#         if not member_info:
+#             return jsonify({"data" : None})
+#         return jsonify({"data" :
+#                         {
+#                             "id" : member_info[0][0],
+#                             "name" : member_info[0][2],
+#                             "username" : member_info[0][1]
+#                         }
+#                     })
+#     elif request.method == "PATCH":
+#         update_info = flow.update_member(session["account"], request.json["name"])
+#         if update_info[0][0] == 1:
+#             return jsonify({"ok" : True})
+#         return jsonify({"error" : True})
+
+class apiMember(Resource):
+    def get(self):
+        if session["state"] == False:
+            return redirect(url_for("index"))
+        member_info = flow.get_member(request.args.get("username"))
+        if not member_info:
+            return jsonify({"data" : None})
+        return jsonify({"data" :
+                        {
+                            "id" : member_info[0][0],
+                            "name" : member_info[0][2],
+                            "username" : member_info[0][1]
+                        }
+                    })
+
+    def patch(self):
+        if session["state"] == False:
+            return redirect(url_for("index"))
+        update_info = flow.update_member(session["account"], request.json["name"])
+        if update_info[0][0] == 1:
+            session["name"] = request.json["name"]
+            return jsonify({"ok" : True})
+        return jsonify({"error" : True})
+
+# Create/Delete message
 @app.route("/createMessage", endpoint="createMessage", methods=["POST"])
 def createMessage():
     if session["state"] == False:
@@ -89,8 +133,10 @@ def deleteMessage():
     # TODO
     # 1. Store the member id in the get message
     # 2. Check the session["id"] == member id
-    flow.delete_message(request.form["messageId"])
+    flow.delete_message(request.form["messageId"], session["id"])
     return redirect(url_for("member"))
+
+api.add_resource(apiMember, '/api/member', endpoint="api/member")
 
 if __name__=="__main__":
     flow.init()
