@@ -53,7 +53,7 @@ def signout():
 
 # Login Page
 # Succcuss
-@app.route("/api/member", endpoint="member", methods=["GET", "POST"])
+@app.route("/member", endpoint="member", methods=["GET", "POST"])
 def member():
     # Check sign-in state
     if session["state"] == False:
@@ -86,9 +86,6 @@ def createMessage():
 def deleteMessage():
     if session["state"] == False:
         return redirect(url_for("index"))
-    # TODO
-    # 1. Store the member id in the get message
-    # 2. Check the session["id"] == member id
     flow.delete_message(request.form["messageId"])
     return redirect(url_for("member"))
 
